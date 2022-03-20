@@ -1,0 +1,54 @@
+{{ if (eq .chezmoi.os "darwin") }}
+" Mac only
+set shell=/bin/zsh
+{{ else }}
+set shell=/usr/bin/zsh
+{{ end }}
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set textwidth=0
+set autoindent
+set hlsearch
+set clipboard=unnamed
+set number
+syntax on
+
+let mapleader="\<Space>"
+
+noremap  <C-[> <esc>
+noremap! <C-[> <esc>
+inoremap <silent> jj <esc>
+
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
+call plug#begin()
+Plug 'ntk148v/vim-horizon', Cond(!exists('g:vscode'))
+Plug 'preservim/nerdtree', Cond(!exists('g:vscode'))
+Plug 'junegunn/fzf', Cond(!exists('g:vscode'), {'do': { -> fzf#install() }})
+Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-commentary', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter', Cond(!exists('g:vscode'))
+Plug 'sheerun/vim-polyglot', Cond(!exists('g:vscode'))
+Plug 'neoclide/coc.nvim', Cond(!exists('g:vscode'), {'branch': 'release'})
+Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
+Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
+call plug#end()
+
+if !exists('g:vscode')
+  let g:gitgutter_highlight_lines = 1
+
+  " Start NERDTree when Vim is started without file arguments.
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+  set termguicolors
+  colorscheme horizon
+  let g:lightline = {}
+  let g:lightline.colorscheme = 'horizon'
+endif
+
