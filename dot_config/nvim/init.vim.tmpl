@@ -29,6 +29,7 @@ call plug#begin()
 Plug 'ntk148v/vim-horizon', Cond(!exists('g:vscode'))
 Plug 'preservim/nerdtree', Cond(!exists('g:vscode'))
 Plug 'junegunn/fzf', Cond(!exists('g:vscode'), {'do': { -> fzf#install() }})
+Plug 'junegunn/fzf.vim', Cond(!exists('g:vscode'))
 Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
 Plug 'tpope/vim-commentary', Cond(!exists('g:vscode'))
 Plug 'tpope/vim-surround'
