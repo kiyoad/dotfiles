@@ -26,8 +26,11 @@ function! Cond(cond, ...)
 endfunction
 
 call plug#begin()
+" VSC like color theme
 Plug 'ntk148v/vim-horizon', Cond(!exists('g:vscode'))
-Plug 'preservim/nerdtree', Cond(!exists('g:vscode'))
+" File Tree Viewer
+Plug 'lambdalisue/fern.vim', Cond(!exists('g:vscode'))
+
 Plug 'junegunn/fzf', Cond(!exists('g:vscode'), {'do': { -> fzf#install() }})
 Plug 'junegunn/fzf.vim', Cond(!exists('g:vscode'))
 Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
@@ -41,11 +44,10 @@ Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymot
 call plug#end()
 
 if !exists('g:vscode')
-  let g:gitgutter_highlight_lines = 1
+  let g:fern#default_hidden = 1
+  nnoremap <silent> <Leader>f :<C-u>Fern . -reveal=% -drawer -toggle -width=40<CR>
 
-  " Start NERDTree when Vim is started without file arguments.
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+  let g:gitgutter_highlight_lines = 1
 
   set termguicolors
   colorscheme horizon
