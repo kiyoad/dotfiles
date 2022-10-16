@@ -149,7 +149,7 @@ if !exists('g:vscode')
 
   " SKK settings
   if !filereadable(expand('~/.config/eskk/SKK-JISYO.L'))
-    call mkdir('~/.config/eskk', 'p')
+    call mkdir(expand('~/.config/eskk'), 'p')
     call system('cd ~/.config/eskk/ && wget https://skk-dev.github.io/dict/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
   endif
   let g:eskk#directory = "~/.config/eskk"
