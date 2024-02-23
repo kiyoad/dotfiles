@@ -3,8 +3,11 @@
 
 {{ if (eq .chezmoi.os "darwin") }}
 # Mac only
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH:/opt/homebrew/bin
 export EDITOR=nvim
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 {{ end }}
 
 # Path to your oh-my-zsh installation.
