@@ -3,7 +3,7 @@
 
 {{ if (eq .chezmoi.os "darwin") }}
 # Mac only
-export PATH=$HOME/bin:$PATH:/opt/homebrew/bin
+export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
 export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -135,6 +135,8 @@ alias vim="nvim"
 alias view="nvim -R"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+
+alias kc="kubectl"
 
 {{ if (ne .chezmoi.os "darwin") }}
 # NOT Mac
