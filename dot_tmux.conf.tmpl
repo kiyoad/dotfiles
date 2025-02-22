@@ -17,3 +17,6 @@ set-option -g prefix C-]
 bind-key C-] send-prefix
 bind-key Q confirm-before -p "respawn-pane? (y/others)" "respawn-pane -k -c '#{pane_current_path}'"
 
+set-option -sg escape-time 10
+set-option -g focus-events on
+
