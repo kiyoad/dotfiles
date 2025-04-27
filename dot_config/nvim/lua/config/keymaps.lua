@@ -21,3 +21,6 @@ vim.keymap.set({ "i", "c" }, "<C-j>", [[<Plug>(skkeleton-toggle)]], { noremap = 
  (Insert mode(SKK:変換中))x : 変換候補を戻る
  (Insert mode(SKK:変換中))CTRL-g : 変換中止
 --]]
+--
+-- Esc キーでターミナル入力モードからノーマルモードに戻れる
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
