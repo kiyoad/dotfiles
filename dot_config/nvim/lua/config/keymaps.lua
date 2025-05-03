@@ -24,3 +24,7 @@ vim.keymap.set({ "i", "c" }, "<C-j>", [[<Plug>(skkeleton-toggle)]], { noremap = 
 --
 -- Esc キーでターミナル入力モードからノーマルモードに戻れる
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
+
+-- https://zenn.dev/skanehira/articles/2022-01-29-vim-cursor-jump
+-- vim.keymap.set("n", "<Leader>j", "<Plug>(jumpcursor-jump)")
+vim.keymap.set("n", "s", "<Plug>(jumpcursor-jump)")
