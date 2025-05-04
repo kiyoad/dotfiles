@@ -1,3 +1,3 @@
 return {
-  { "skanehira/jumpcursor.vim"},
+  { "skanehira/jumpcursor.vim" },
 }
