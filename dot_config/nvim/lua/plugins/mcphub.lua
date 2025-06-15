@@ -1,6 +1,8 @@
 return {
   {
+    -- MCP Hub is a MCP client for neovim that seamlessly integrates MCP (Model Context Protocol) servers into your editing workflow.
     "ravitemer/mcphub.nvim",
+    event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -9,7 +11,7 @@ return {
       require("mcphub").setup({
         extensions = {
           avante = {
-            make_slash_commands = true, -- スラッシュコマンドを生成する
+            make_slash_commands = true, -- add slash command
           },
         },
       })

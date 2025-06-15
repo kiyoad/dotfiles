@@ -1,5 +1,6 @@
 return {
   {
+    -- Similar to indent-blankline, this plugin can highlight the indent line, and highlight the code chunk according to the current cursor position.
     "shellRaining/hlchunk.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()

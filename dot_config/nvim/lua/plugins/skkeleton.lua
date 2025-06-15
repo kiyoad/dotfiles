@@ -1,5 +1,6 @@
 return {
   {
+    -- skkeleton is a Vim/Neovim plugin that provides japanese input environment called SKK.
     "vim-skk/skkeleton",
     dependencies = { "vim-denops/denops.vim" },
     config = function()
@@ -18,6 +19,7 @@ return {
     end,
   },
   {
+    -- Yet another indicator for Skkeleton.
     "delphinus/skkeleton_indicator.nvim",
     opts = {},
   },

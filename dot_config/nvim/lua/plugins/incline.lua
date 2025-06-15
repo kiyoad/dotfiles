@@ -1,6 +1,11 @@
 return {
-  { "nvim-tree/nvim-web-devicons", opts = {} },
   {
+    -- Provides Nerd Font icons (glyphs) for use by Neovim plugins:
+    "nvim-tree/nvim-web-devicons",
+    opts = {},
+  },
+  {
+    -- Incline is a plugin for creating lightweight floating statuslines. It works great with Neovim's global statusline (:set laststatus=3).
     "b0o/incline.nvim",
     config = function()
       local helpers = require("incline.helpers")

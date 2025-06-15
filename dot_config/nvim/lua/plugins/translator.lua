@@ -1,6 +1,8 @@
 return {
   {
+    -- Asynchronous translating plugin for Vim/Neovim
     "voldikss/vim-translator",
+    event = "VeryLazy",
     cmd = { "TranslateW", "TranslateW --target_lang=en" },
     keys = {
       -- Popup
@@ -49,9 +51,10 @@ return {
       vim.g.translator_window_max_height = 0.9 -- 1 is not working
     end,
   },
-
   {
+    -- With pantran.nvim, you can use your favorite machine translation engines without having to leave your favorite editor.
     "potamides/pantran.nvim",
+    event = "VeryLazy",
     keys = {
       { "<leader>tw", "<cmd>Pantran<CR>", mode = { "n", "v" }, desc = "Show Translate Window" },
     },

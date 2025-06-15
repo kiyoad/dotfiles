@@ -1,6 +1,8 @@
 return {
   {
+    -- Colorize text with ANSI escape sequences (8, 16, 256 or TrueColor)
     "m00qek/baleia.nvim",
+    event = "VeryLazy",
     version = "*",
     config = function()
       vim.g.baleia = require("baleia").setup({})
