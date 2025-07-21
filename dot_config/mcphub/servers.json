@@ -1,16 +1,5 @@
 {
-  "nativeMCPServers": [
-    
-  ],
   "mcpServers": {
-    "everything": {
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ],
-      "command": "npx",
-      "disabled": false
-    },
     "arxiv-mcp-server": {
       "args": [
         "tool",
@@ -22,13 +11,10 @@
       "command": "uv",
       "disabled": false
     },
-    "tavily": {
-      "env": {
-        "TAVILY_API_KEY": "${input:tavily_api_key}"
-      },
+    "everything": {
       "args": [
         "-y",
-        "tavily-mcp@0.2.0"
+        "@modelcontextprotocol/server-everything"
       ],
       "command": "npx",
       "disabled": false
@@ -40,6 +26,22 @@
       ],
       "command": "npx",
       "disabled": false
+    },
+    "tavily": {
+      "args": [
+        "-y",
+        "tavily-mcp@0.2.0"
+      ],
+      "command": "npx",
+      "disabled": false,
+      "env": {
+        "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+      }
+    }
+  },
+  "nativeMCPServers": {
+    "neovim": {
+      "disabled": true
     }
   }
 }
