@@ -26,4 +26,4 @@ vim.keymap.set({ "i", "c" }, "<C-j>", [[<Plug>(skkeleton-toggle)]], { noremap = 
 vim.keymap.set("t", "jj", [[<C-\><C-n>]])
 
 -- https://zenn.dev/skanehira/articles/2022-01-29-vim-cursor-jump
-vim.keymap.set("n", "t", "<Plug>(jumpcursor-jump)")
+vim.keymap.set("n", "M", "<Plug>(jumpcursor-jump)")
