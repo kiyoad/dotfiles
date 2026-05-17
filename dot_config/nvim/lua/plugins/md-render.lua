@@ -8,6 +8,7 @@ return {
       { "delphinus/budoux.lua", version = "*" }, -- optional: CJK phrase-level line breaking
     },
     keys = {
+      { "<leader>m", "", desc = "Markdown-render" },
       { "<leader>mp", "<Plug>(md-render-preview)", desc = "Markdown preview (toggle)" },
       { "<leader>mt", "<Plug>(md-render-preview-tab)", desc = "Markdown preview in tab (toggle)" },
       { "<leader>md", "<Plug>(md-render-demo)", desc = "Markdown render demo" },
